@@ -1,3 +1,3 @@
 # SIMDCodes
 
-Repository containing practice codes for parallel programming in C++
+Repository containing practice codes for SIMD programming in C++
