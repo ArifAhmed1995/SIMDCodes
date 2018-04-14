@@ -5,6 +5,8 @@
 
 #include </include/vdt/vdtMath.h>
 
+#include "simd_ins.h"
+
 const int SIMD_SIZE = 16;
 
 using umesimd_dv = typename UME::SIMD::SIMDVec<double, SIMD_SIZE>;
@@ -47,7 +49,9 @@ void compute_with_naive_scalar(double * x, double * mean, double * stddev, doubl
 
 int main()
 {
-    int sample_size = 10000;
+    simd::set_values();
+
+    int sample_size = 100000;
 
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end; 
     double x[sample_size], mean[sample_size], stddev[sample_size], result[sample_size]; 
